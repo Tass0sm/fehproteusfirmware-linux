@@ -3,7 +3,8 @@ FEHURL := feh.osu.edu
 FIRMWAREREPO := fehproteusfirmware
 
 ifeq ($(FEHQTINSTALL),)
-FEHQTINSTALL = C:\apps\FEHQt
+#Temporary file location for just me.
+FEHQTINSTALL = /home/anastasios/Desktop/FEH Robot/fehqt
 endif
 
 ifeq ($(OS),Windows_NT)
