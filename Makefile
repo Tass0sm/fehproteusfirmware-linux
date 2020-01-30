@@ -69,7 +69,7 @@ deploy:
 ifeq ($(OS),Windows_NT)
 	@tools\copyS19.bat
 else
-	@tools/copyS19
+	@Tools/copyS19
 endif
 run:
 
