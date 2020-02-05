@@ -69,7 +69,7 @@ deploy:
 ifeq ($(OS),Windows_NT)
 	@tools\copyS19.bat
 else
-	@tools/copyS19
+	@Tools/copyS19
 endif
 run:
 
@@ -78,7 +78,7 @@ run:
 ifeq ($(OS),Windows_NT)
 	@tools\sizeGet.bat
 else
-	@tools/sizeGet
+	@Tools/sizeGet
 endif
 	@echo ----------------------------------------------
 	@echo Download Successful. Please eject the SD card. >&2
