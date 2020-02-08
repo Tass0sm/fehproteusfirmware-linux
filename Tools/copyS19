@@ -2,9 +2,14 @@
 
 echo "Running copyS19"
 
-if test ! -d /media/anastasios/FEHSD 
-then
-	echo "SD Card is not inserted" >&2
+#Not portable solution. Requires GIO (from Gnome).
+if test ! -d /media/anastasios/FEHSD; then
+	echo "Attempting to mount /dev/sda1" >&2
+	gio mount -d /dev/sda1
+fi
+
+if test ! -d /media/anastasios/FEHSD; then
+	echo "Failed to mount SD Card, SD Card may not be inserted" >&2
 	exit 1
 fi
 
@@ -28,4 +33,7 @@ else
 	exit 1
 fi
 
-
+if test -d /media/anastasios/FEHSD; then
+	gio mount -e /media/anastasios/FEHSD
+	echo "Ejected the FEHSD drive"
+fi
